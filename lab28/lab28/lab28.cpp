@@ -15,6 +15,8 @@
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
+const int MIN_TRIP_SIZE = 8;
+const int MAX_TRIP_SIZE = 15;
 
 int select_goat(list<Goat> trip);
 void delete_goat(list<Goat>& trip);
@@ -100,6 +102,9 @@ int main() {
         case 10:
             display_unique_ages(trip);
             break;
+        case 11:
+            reverse_goats(trip);
+            break;
         }
         sel = main_menu();
     }
@@ -123,6 +128,7 @@ int main_menu() {
     cout << "[11] Reverse the order of goats\n";
     cout << "[12] Quit\n";
     cout << "Choice --> ";
+
     int choice;
     cin >> choice;
     while (choice < 1 || choice > 12) {
