@@ -219,7 +219,11 @@ void remove_goats_older_than(list<Goat>& trip) {
 }
 
 void display_random_order(list<Goat>& trip) {
-
+    vector<Goat> goats_vec(trip.begin(), trip.end());
+    default_random_engine engine(random_device{}());
+    shuffle(goats_vec.begin(), goats_vec.end(), engine);
+    cout << "Goats are in random order: " << endl;
+    display_trip(goats_vec);
 }
 
 void display_unique_ages(list<Goat>& trip) {
