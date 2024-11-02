@@ -9,6 +9,8 @@
 #include "Goat.h"
 #include <vector>
 #include <algorithm>
+#include <numeric>
+#include <random>
 
 using namespace std;
 
@@ -179,19 +181,35 @@ void sort_goats(list<Goat>& trip) {
 
 void find_goat(list<Goat>& trip) {
     string name;
+    cout << "Enter the name of goat: ";
+    cin >> name;
 
+    auto it = find_if(trip.begin(), trip.end(), [&name](const Goat& g) {return g.get_name() == name; });
+    if (it != trip.end()) {
+        cout << "Found goat: " << it->get_name() << " (Age: " << it->get_age() << ", Color: " << it->get_color() << ")" << endl;
+    }
 }
 
 void count_goats_by_age(list<Goat>& trip) {
+    int age;
+    cout << "Enter age to count: ";
+    cin >> age;
 
 }
 
 void calculate_average_age(list<Goat>& trip) {
-
+    if (trip.empty()) {
+        cout << "No goats avaiable to calculate." << endl;
+        return;
+    }
+    double avg_age = accumulate(trip.begin(), trip.end(), 0.0, [](double sum, const Goat& g) {return sum + g.get_age(); }) /trip.size();
+    cout << "Average age of goats: " << avg_age << endl;
 }
 
 void remove_goats_older_than(list<Goat>& trip) {
-
+    int age;
+    cout << "Enter age limit: ";
+    cin >> age;
 }
 
 void display_random_order(list<Goat>& trip) {
