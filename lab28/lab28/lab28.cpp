@@ -125,7 +125,7 @@ int main_menu() {
     cout << "Choice --> ";
     int choice;
     cin >> choice;
-    while (choice < 1 || choice > 4) {
+    while (choice < 1 || choice > 12) {
         cout << "Invalid, again --> ";
         cin >> choice;
     }
@@ -220,12 +220,26 @@ void remove_goats_older_than(list<Goat>& trip) {
 
 void display_random_order(list<Goat>& trip) {
     vector<Goat> goats_vec(trip.begin(), trip.end());
+
     default_random_engine engine(random_device{}());
     shuffle(goats_vec.begin(), goats_vec.end(), engine);
+    
+    list<Goat> goats_list(goats_vec.begin(), goats_vec.end());
     cout << "Goats are in random order: " << endl;
-    display_trip(goats_vec);
+    display_trip(goats_list);
 }
 
 void display_unique_ages(list<Goat>& trip) {
-
+    vector<int> ages;
+    for (const Goat& g : trip) {
+        ages.push_back(g.get_age());
+    }
+    sort(ages.begin(), ages.end());
+    auto last = unique(ages.begin(), ages.end());
+    ages.erase(last, ages.end());
+    cout << "Unique ahes: ";
+    for (int age : ages) {
+        cout << age << " ";
+    }
+    cout << endl;
 }
