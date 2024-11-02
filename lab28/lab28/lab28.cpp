@@ -195,6 +195,9 @@ void count_goats_by_age(list<Goat>& trip) {
     cout << "Enter age to count: ";
     cin >> age;
 
+    int count = count_if(trip.begin(), trip.end(), [age](const Goat& g) {return g.get_age() == age; });
+    cout << "Number of goats aged " << age << ": " << count << endl;
+
 }
 
 void calculate_average_age(list<Goat>& trip) {
@@ -210,6 +213,9 @@ void remove_goats_older_than(list<Goat>& trip) {
     int age;
     cout << "Enter age limit: ";
     cin >> age;
+
+    trip.remove_if([age](const Goat& g) {return g.get_age() > age; });
+    cout << "Goats older than " << age << " have been removed" << endl;
 }
 
 void display_random_order(list<Goat>& trip) {
