@@ -78,7 +78,15 @@ int main_menu() {
     cout << "[1] Add a goat\n";
     cout << "[2] Delete a goat\n";
     cout << "[3] List goats\n";
-    cout << "[4] Quit\n";
+    cout << "[4] Sort goats by name\n";
+    cout << "[5] Find a goat by name\n";
+    cout << "[6] Count goats of certain age\n";
+    cout << "[7] Calculate average age\n";
+    cout << "[8] Remove goats older than certian age\n";
+    cout << "[9] Display goats in random order\n";
+    cout << "[10] Display specific ages\n";
+    cout << "[11] Reverse the order of goats\n";
+    cout << "[12] Quit\n";
     cout << "Choice --> ";
     int choice;
     cin >> choice;
