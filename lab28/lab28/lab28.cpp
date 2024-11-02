@@ -7,6 +7,9 @@
 #include <iomanip>
 #include <list>
 #include "Goat.h"
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25;
@@ -16,6 +19,15 @@ void delete_goat(list<Goat>& trip);
 void add_goat(list<Goat>& trip, string[], string[]);
 void display_trip(list<Goat> trip);
 int main_menu();
+void sort_goats(list<Goat>& trip);
+void find_goat(list<Goat>& trip);
+void count_goats_by_age(list<Goat>& trip);
+void calculate_average_age(list<Goat>& trip);
+void remove_goats_older_than(list<Goat>& trip);
+void display_random_order(list<Goat>& trip);
+void display_unique_ages(list<Goat>& trip);
+void reverse_goats(list<Goat>& trip);
+
 
 int main() {
     srand(time(0));
@@ -48,7 +60,7 @@ int main() {
 
     // Goat Manager 3001 Engine
     int sel = main_menu();
-    while (sel != 4) {
+    while (sel != 12) {
         switch (sel) {
         case 1:
             cout << "Adding a goat.\n";
@@ -64,6 +76,27 @@ int main() {
             break;
         default:
             cout << "Invalid selection.\n";
+            break;
+        case 4: 
+            sort_goats(trip);
+            break;
+        case 5:
+            find_goat(trip);
+            break;
+        case 6:
+            count_goats_by_age(trip);
+            break;
+        case 7:
+            calculate_average_age(trip);
+            break;
+        case 8:
+            remove_goats_older_than(trip);
+            break;
+        case 9:
+            display_random_order(trip);
+            break;
+        case 10:
+            display_unique_ages(trip);
             break;
         }
         sel = main_menu();
@@ -138,3 +171,13 @@ int select_goat(list<Goat> trp) {
     }
     return input;
 }
+
+void sort_goats(list<Goat>& trip)
+
+void find_goat(list<Goat>& trip)
+
+void count_goats_by_age(list<Goat>& trip)
+
+void calculate_average_age(list<Goat>& trip)
+
+void
