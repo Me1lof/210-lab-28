@@ -172,12 +172,32 @@ int select_goat(list<Goat> trp) {
     return input;
 }
 
-void sort_goats(list<Goat>& trip)
+void sort_goats(list<Goat>& trip) {
+    trip.sort();
+    cout << "Goats sorted by name" << endl;
+}
 
-void find_goat(list<Goat>& trip)
+void find_goat(list<Goat>& trip) {
+    string name;
 
-void count_goats_by_age(list<Goat>& trip)
+}
 
-void calculate_average_age(list<Goat>& trip)
+void count_goats_by_age(list<Goat>& trip) {
 
-void
+}
+
+void calculate_average_age(list<Goat>& trip) {
+
+}
+
+void remove_goats_older_than(list<Goat>& trip) {
+
+}
+
+void display_random_order(list<Goat>& trip) {
+
+}
+
+void display_unique_ages(list<Goat>& trip) {
+
+}
